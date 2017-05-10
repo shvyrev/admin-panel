@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo OKZ</title>
+
+    <!--FONTS-->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:300,200,100" rel="stylesheet" type="text/css">
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!--Font Awesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!--Theme-->
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">-->
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-pVJelSCJ58Og1XDc2E95RVYHZDPb9AVyXsI8NoVpB2xmtxoZKJePbMfE4mlXw7BJ" crossorigin="anonymous">-->
+
+    <!--Other libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid theme-showcase">
+    <div class="help-block"></div>
+
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <button id="bank-registration" type="button" class="btn btn-info">Я - банк  с мсб заемщиками</button>
+        <button id="ur-lico-registration" type="button" class="btn btn-info">Я - юрлицо</button>
+        <button id="investor-agent-registration" type="button" class="btn btn-info">Я - представитель инвестора</button>
+        <button id="investor-registration" type="button" class="btn btn-info">Я - инвестор</button>
+        <button id="lc-enter" type="button" class="btn btn-info">Войти в личный кабинет</button>
+    </div>
+
+    <div class="col-md-1"></div>
+
+    <div id="bank-modal" class="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Регистрация банка</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="help-block"></div>
+                    <p>Введите информацию о Вашем банке:</p>
+                    <label for="captcha-text">Название</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="bank-name">
+                    </div>
+                    <label for="captcha-text">ФИО представителя</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="bank-fio-admin">
+                    </div>
+                    <label for="captcha-text">Телефон представителя</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="bank-phone-admin">
+                    </div>
+                    <label for="captcha-text">email представителя</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="bank-mail-admin">
+                    </div>
+                    <label for="captcha-text">Город банка</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="bank-city">
+                    </div>
+                    <label for="captcha-text">Юридический адрес банка</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="bank-address">
+                    </div>
+                    <label for="captcha-text">Дополнительная информация</label>
+                    <div class="input-group">
+                        <textarea class="form-control" required id="bank-ext"></textarea>
+                    </div>
+                    <div class="help-block"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default close-modal-button">Отменить</button>
+                    <button id="bank-reg-button" type="button" class="btn btn-primary" data-dismiss="modal">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ur-lico-modal" class="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Регистрация кредитной заявки</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="help-block"></div>
+                    <p>Введите информацию о Вашем юрлице:</p>
+                    <label for="captcha-text">Название юрлица:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="ur-lico-name">
+                    </div>
+                    <label for="captcha-text">ИНН</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="ur-lico-inn">
+                    </div>
+                    <label for="captcha-text">Телефон</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="ur-lico-phone">
+                    </div>
+                    <label for="captcha-text">Емейл</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="ur-lico-mail">
+                    </div>
+                    <label for="captcha-text">Дополнительная информация</label>
+                    <div class="input-group">
+                        <textarea class="form-control" required id="ur-lico-ext"></textarea>
+                    </div>
+                    <div class="help-block"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default close-modal-button">Отменить</button>
+                    <button id="ur-lico-reg-button" type="button" class="btn btn-primary" data-dismiss="modal">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="investor-agent-modal" class="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Регистрация агента Инвесторов в системе Оператора Кредитных Заявок</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="help-block"></div>
+                    <p>Заполните данные Агента Инвестора:</p>
+                    <label for="captcha-text">Название:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="investor-agent-name">
+                    </div>
+                    <label for="captcha-text">ФИО представителя:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="investor-agent-fio">
+                    </div>
+                    <label for="captcha-text">Телефон представителя:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="investor-agent-phone">
+                    </div>
+                    <label for="captcha-text">email представителя:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="investor-agent-mail">
+                    </div>
+                    <label for="captcha-text">Город:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="investor-agent-city">
+                    </div>
+                    <label for="captcha-text">Юридический адрес:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="investor-agent-address">
+                    </div>
+                    <label for="captcha-text">Дополнительная информация</label>
+                    <div class="input-group">
+                        <textarea class="form-control" required id="investor-agent-ext"></textarea>
+                    </div>
+                    <div class="help-block"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default close-modal-button">Отменить</button>
+                    <button id="investor-agent-reg-button" type="button" class="btn btn-primary" data-dismiss="modal">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="investor-modal" class="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Регистрация Инвестора в системе Оператора Кредитных Заявок:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="help-block"></div>
+                    <p>Введите информацию об инвесторе:</p>
+                    <label for="captcha-text">Название юрл:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="investor-name">
+                    </div>
+                    <label for="captcha-text">ИНН:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="investor-inn">
+                    </div>
+                    <label for="captcha-text">Телефон:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="investor-phone">
+                    </div>
+                    <label for="captcha-text">Емейл:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="investor-mail">
+                    </div>
+                    <label for="captcha-text">Дополнительная информация</label>
+                    <div class="input-group">
+                        <textarea class="form-control" required id="investor-ext"></textarea>
+                    </div>
+                    <div class="help-block"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default close-modal-button">Отменить</button>
+                    <button id="investor-reg-button" type="button" class="btn btn-primary" data-dismiss="modal">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div id="enter-modal" class="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Введите логин и пароль в системе Оператора Кредитных Заявок</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="help-block"></div>
+                    <!--<p>Введите информацию об инвесторе:</p>-->
+
+                    <label for="captcha-text">Емейл:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="enter-mail">
+                    </div>
+
+                    <label for="captcha-text">Пароль:</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" required id="enter-password">
+                    </div>
+
+                    <div class="help-block"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default close-modal-button">Отменить</button>
+                    <button id="enter-button" type="button" class="btn btn-primary" data-dismiss="modal">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="captcha-modal" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Капча</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="captcha-image" src="..." class="rounded mx-auto d-block" alt="Responsive image">
+                    <div class="help-block"></div>
+                    <label for="captcha-text">Пожалуйста введите текст с картинки</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="captcha-text">
+                    </div>
+                    <div class="help-block"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="reload-image" type="button" class="btn btn-default">Обновить</button>
+                    <button id="send-captcha" type="button" class="btn btn-primary" data-dismiss="modal">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="captcha-error-modal" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ошибка ввода.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="captcha-text">Пожалуйста попрробуйте еще раз.</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="reloadPage()">Повторить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "alert_placeholder"></div>
+
+</div>
+
+<script>
+
+    var host = "https://nalog-ru-crawler.herokuapp.com";
+//    var host = "http://localhost:8080";
+    var captchaRequest = {};
+
+    $(function () {
+
+        $(".close-modal-button").click(function () {
+            $(".modal").modal("hide");
+        });
+
+        $("#bank-registration").click(function () {
+            $("#bank-name").val(""), $("#bank-fio-admin").val(""), $("#bank-phone-admin").val(""), $("#bank-mail-admin").val(""), $("#bank-city").val(""), $("#bank-address").val(""), $("#bank-ext").val("");
+            $("#bank-modal").modal("show");
+        });
+
+        $("#ur-lico-registration").click(function () {
+            $("#ur-lico-name").val(""), $("#ur-lico-inn").val(""), $("#ur-lico-phone").val(""), $("#ur-lico-mail").val(""), $("#ur-lico-ext").val("");
+            $("#ur-lico-modal").modal("show");
+        });
+
+
+        $("#bank-reg-button").click(function () {
+            console.log(
+                $("#bank-name").val(),
+                $("#bank-fio-admin").val(),
+                $("#bank-phone-admin").val(),
+                $("#bank-mail-admin").val(),
+                $("#bank-city").val(),
+                $("#bank-address").val(),
+                $("#bank-ext").val()
+            );
+
+            $(".modal").modal("hide");
+        })
+
+        $("#ur-lico-reg-button").click(function () {
+            console.log(
+                $("#ur-lico-name").val(), $("#ur-lico-inn").val(), $("#ur-lico-phone").val(), $("#ur-lico-mail").val(), $("#ur-lico-ext").val()
+            );
+
+            $(".modal").modal("hide");
+        })
+
+        $("#investor-agent-registration").click(function () {
+            $("#investor-agent-name").val(""),$("#investor-agent-fio").val(""),$("#investor-agent-phone").val(""),$("#investor-agent-mail").val(""),$("#investor-agent-city").val(""),$("#investor-agent-address").val(""),$("#investor-agent-ext").val("");
+            $("#investor-agent-modal").modal("show");
+        });
+
+        $("#investor-agent-reg-button").click(function () {
+            console.log(
+                $("#investor-agent-name").val(),$("#investor-agent-fio").val(),$("#investor-agent-phone").val(),$("#investor-agent-mail").val(),$("#investor-agent-city").val(),$("#investor-agent-address").val(),$("#investor-agent-ext").val()
+            );
+            $(".modal").modal("hide");
+        })
+
+        $("#investor-registration").click(function () {
+            $("#investor-name").val(""),$("#investor-inn").val(""),$("#investor-phone").val(""),$("#investor-mail").val(""),$("#investor-ext").val("");
+            $("#investor-modal").modal("show");
+        });
+
+        $("#investor-reg-button").click(function () {
+            console.log(
+                $("#investor-name").val(),$("#investor-inn").val(),$("#investor-phone").val(),$("#investor-mail").val(),$("#investor-ext").val()
+            );
+            $(".modal").modal("hide");
+        })
+
+        $("#lc-enter").click(function () {
+            $("#enter-mail").val(""),$("#enter-password").val("");
+            $("#enter-modal").modal("show");
+        });
+
+        $("#enter-button").click(function () {
+            console.log(
+                $("#enter-mail").val(),$("#enter-password").val()
+            );
+            $(".modal").modal("hide");
+        })
+
+    })
+
+</script>
+</body>
+</html>
