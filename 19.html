@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo OKZ</title>
+
+    <!--FONTS-->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:300,200,100" rel="stylesheet" type="text/css">
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!--Font Awesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!--Theme-->
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">-->
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-pVJelSCJ58Og1XDc2E95RVYHZDPb9AVyXsI8NoVpB2xmtxoZKJePbMfE4mlXw7BJ" crossorigin="anonymous">-->
+
+    <!--Other libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid theme-showcase">
+    <div class="help-block"></div>
+    <h3>Личный кабинет Банка с мсб заемщиками - Администратора агента заемщика - заемщики</h3>
+    <div class="help-block"></div>
+
+    <div class="row">
+            <!--<button id="administrators" type="button" class="btn btn-info">Администраторы</button>-->
+            <button type="button" class="btn btn-info">Банки (агенты мсб)</button>
+            <button type="button" class="btn btn-info">Заемщик</button>
+            <button type="button" class="btn btn-info">Сделки  по займу</button>
+            <!--<button id="administrators" type="button" class="btn btn-info">Представители  инвесторов</button>-->
+            <!--<button id="administrators" type="button" class="btn btn-info">Инвестор</button>-->
+            <!--<button id="aistrators" type="button" class="btn btn-info">Сделки по инвестициям</button>-->
+            <button type="button" class="btn btn-info">Книга  Заявок</button>
+            <button type="button" class="btn btn-info">Отчеты агентов</button>
+            <!--<button id="administrators" type="button" class="btn btn-info">Отзывы</button>-->
+            <!--<button id="administrators" type="button" class="btn btn-info">Тексты</button>-->
+    </div>
+    <div class="help-block"></div>
+
+    <div class="row">
+        <label for="product-table">Продуктовая информация - Портфели/реестры заявок</label>
+        <table id="product-table" class="table">
+            <thead>
+            <tr>
+                <th>№</th>
+                <th>Название портфеля отказников</th>
+                <th>Количество отказников</th>
+                <th>Размер кредита</th>
+                <th>Период дат подачи заявок</th>
+                <th>Залоговые</th>
+                <th>Срок желаемых кредиторваний</th>
+                <th>Лимиты на Supplier - агента</th>
+                <th>Лимиты на Supplier - конечника</th>
+                <th>Дополнительная информация</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <label>Управление портфелем/реестром заявок</label>
+    <div class="helper-block"></div>
+    <button type="button">Кнопка: Просмотреть  состав портфеля</button>
+    <button type="button">Кнопка: Просмотреть  состав портфеля </button>
+    <table id="stupid-table" class="table">
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>ID</th>
+            <th>Статус обработки заявки</th>
+            <th>Сумма, руб</th>
+            <th>Процент, %</th>
+            <th>Срок</th>
+            <th>Залоговые</th>
+            <th>Ограничения по типу Supplier</th>
+            <th>Лимиты на Supplier - конечника</th>
+            <th>Юридическая  схема</th>
+            <th>Отрасль</th>
+            <th>Дополнительная информация</th>
+            <th>Скоринг статус</th>
+            <th>Скоринг результат обработки банковской тайны</th>
+            <th>Скоринг результат из внешних источников</th>
+            <th>Скоринг решение, класс риска</th>
+            <th>Скоринг справка</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</div>
+
+<script>
+
+    var productInfo = [{
+        name: "Портфель мсб отказники март 2017",
+        refuse_count: 98,
+        credit_amount:  50000000,
+        period: "01.01.2017 - 31.03.2017",
+        deposit: "Нет",
+        credit_period: "12 месяцев",
+        agent_limit: "кроме клиентов ВТБ",
+        client_limit: "кроме кредитных брокеров",
+        ext: "отказники мсб"
+    }];
+
+    var stupidData = [
+        {
+            id : 100400,
+            status : "отправлена в стакан",
+            sum : 100400,
+            percent : 20,
+            period : "01.05.2017 - 30.04.2018",
+            debit : "нет",
+            supplier_limit: "кроме лиентов ВТБ",
+            supplier_limit_client: "Лимиты на Supplier - конечника",
+            yur_scheme: "прямой договор",
+            otrasl: "екоммерс",
+            ext: "необходим кредит под оборотку",
+            scoring_status: "обработан полностью",
+            scoring_result: "Стоп факторы отсутствуют",
+            scoring_result_2: "Стоп факторы отсутствуют",
+            clazz: "Класс A",
+            spravka: "Бизнес стабилен, рекомендуемая ставка 25%"
+        }
+    ];
+
+    $(function () {
+
+        productInfo.forEach(
+            function (item, i, array) {
+                $("#product-table > tbody:last-child")
+                    .append("<tr>" +
+                        "<td>" + (i + 1) + "</td>" +
+                        "<td>" + item.name+ "</td>" +
+                        "<td>" + item.refuse_count + "</td>" +
+                        "<td>" + item.credit_amount + "</td>" +
+                        "<td>" + item.period + "</td>" +
+                        "<td>" + item.deposit + "</td>" +
+                        "<td>" + item.credit_period + "</td>" +
+                        "<td>" + item.agent_limit + "</td>" +
+                        "<td>" + item.client_limit + "</td>" +
+                        "<td>" + item.ext + "</td>" +
+                        "</tr>");
+
+            }
+        );
+
+
+        stupidData.forEach(
+            function (item, i, array) {
+                $("#stupid-table > tbody:last-child")
+                    .append("<tr>" +
+                        "<td>" + (i + 1) + "</td>" +
+                        "<td>" + item.id+ "</td>" +
+                        "<td>" + item.status + "</td>" +
+                        "<td>" + item.sum + "</td>" +
+                        "<td>" + item.percent + "</td>" +
+                        "<td>" + item.period + "</td>" +
+                        "<td>" + item.debit + "</td>" +
+                        "<td>" + item.supplier_limit + "</td>" +
+                        "<td>" + item.supplier_limit_client + "</td>" +
+                        "<td>" + item.yur_scheme + "</td>" +
+                        "<td>" + item.otrasl + "</td>" +
+                        "<td>" + item.ext + "</td>" +
+                        "<td>" + item.scoring_status + "</td>" +
+                        "<td>" + item.scoring_result + "</td>" +
+                        "<td>" + item.scoring_result_2 + "</td>" +
+                        "<td>" + item.clazz + "</td>" +
+                        "<td>" + item.spravka + "</td>" +
+                        "</tr>");
+
+            }
+        );
+    })
+</script>
+</body>
+</html>

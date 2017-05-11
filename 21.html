@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo OKZ</title>
+
+    <!--FONTS-->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:300,200,100" rel="stylesheet" type="text/css">
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!--Font Awesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!--Theme-->
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">-->
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-pVJelSCJ58Og1XDc2E95RVYHZDPb9AVyXsI8NoVpB2xmtxoZKJePbMfE4mlXw7BJ" crossorigin="anonymous">-->
+
+    <!--Other libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid theme-showcase">
+    <div class="help-block"></div>
+    <h3>Личный кабинет Банка с мсб заемщиками - Администратора агента заемщика - заемщики</h3>
+    <div class="help-block"></div>
+
+    <div class="col-md-10">
+        <!--<button id="administrators" type="button" class="btn btn-info">Администраторы</button>-->
+        <button id="administrators" type="button" class="btn btn-info">Банки (агенты мсб)</button>
+        <button id="administrators" type="button" class="btn btn-info">Заемщик</button>
+        <button id="administrators" type="button" class="btn btn-info">Сделки  по займу</button>
+        <!--<button id="administrators" type="button" class="btn btn-info">Представители  инвесторов</button>-->
+        <!--<button id="administrators" type="button" class="btn btn-info">Инвестор</button>-->
+        <!--<button id="administrators" type="button" class="btn btn-info">Сделки по инвестициям</button>-->
+        <button id="administrators" type="button" class="btn btn-info">Книга  Заявок</button>
+        <button id="administrators" type="button" class="btn btn-info">Отчеты агента</button>
+        <!--<button id="administrators" type="button" class="btn btn-info">Отзывы</button>-->
+        <!--<button id="administrators" type="button" class="btn btn-info">Тексты</button>-->
+    </div>
+
+</div>
+<div class="help-block"></div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="form-group row">
+            <label for="resource-dropdown-button" class="col-2 col-form-label">Базовый актив</label>
+            <div class="col-10">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="resource-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Серебро
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button">Золото</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="resource-dropdown-button" class="col-2 col-form-label">Серия</label>
+            <div class="col-10">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="resource-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        15 июня 2017
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button">15 июля 2017</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">Все страйки</button>
+                <button type="button" class="btn btn-secondary">Рабочий диапазон</button>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">Таблица</button>
+                <button type="button" class="btn btn-secondary">График</button>
+            </div>
+        </div>
+        <div class="help-block"></div>
+        <div class="row">
+            <label>Цена SILV-6.17: 18.63</label>
+            <div class="col-sm-1"></div>
+            <label>Время 2017-04-13 14:23:03</label>
+            <div class="col-sm-1"></div>
+            <label>Торги идут</label>
+        </div>
+    </div>
+    <div class="help-block"></div>
+    <div class="col-md-10">
+    <table id="buing-table" class="table">
+        <thead>
+        <tr>
+            <th>Покупка Call</th>
+            <th>Теор. Call</th>
+            <th>Продажа Call</th>
+            <th>Страйк</th>
+            <th>Покупка Put</th>
+            <th>Теор. Put</th>
+            <th>Продажа Put</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<script>
+
+    var array = [
+        {
+            buing_call: "28.03 0.02",
+            theor_call: "0.01",
+            selling_call: "0.01",
+            strike: "25,5",
+            buing_put: "28.03 0.02",
+            theor_put: "0.01",
+            selling_put: "0.01"
+        },{
+            buing_call: "28.03 0.02",
+            theor_call: "0.01",
+            selling_call: "0.01",
+            strike: "25,5",
+            buing_put: "28.03 0.02",
+            theor_put: "0.01",
+            selling_put: "0.01"
+        },{
+            buing_call: "28.03 0.02",
+            theor_call: "0.01",
+            selling_call: "0.01",
+            strike: "25,5",
+            buing_put: "28.03 0.02",
+            theor_put: "0.01",
+            selling_put: "0.01"
+        },{
+            buing_call: "28.03 0.02",
+            theor_call: "0.01",
+            selling_call: "0.01",
+            strike: "25,5",
+            buing_put: "28.03 0.02",
+            theor_put: "0.01",
+            selling_put: "0.01"
+        },{
+            buing_call: "28.03 0.02",
+            theor_call: "0.01",
+            selling_call: "0.01",
+            strike: "25,5",
+            buing_put: "28.03 0.02",
+            theor_put: "0.01",
+            selling_put: "0.01"
+        },{
+            buing_call: "28.03 0.02",
+            theor_call: "0.01",
+            selling_call: "0.01",
+            strike: "25,5",
+            buing_put: "28.03 0.02",
+            theor_put: "0.01",
+            selling_put: "0.01"
+        },{
+            buing_call: "28.03 0.02",
+            theor_call: "0.01",
+            selling_call: "0.01",
+            strike: "25,5",
+            buing_put: "28.03 0.02",
+            theor_put: "0.01",
+            selling_put: "0.01"
+        },
+    ];
+
+    $(function () {
+        array.forEach(
+            function (item, i, array) {
+                $("#buing-table > tbody:last-child")
+                    .append("<tr>" +
+                        "<td>" + item.buing_call+ "</td>" +
+                        "<td>" + item.theor_call + "</td>" +
+                        "<td>" + item.selling_call + "</td>" +
+                        "<td>" + item.strike + "</td>" +
+                        "<td>" + item.buing_put + "</td>" +
+                        "<td>" + item.theor_put + "</td>" +
+                        "<td>" + item.selling_put + "</td>" +
+                        "</tr>");
+
+            }
+        );
+    })
+</script>
+</body>
+</html>
