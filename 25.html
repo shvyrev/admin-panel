@@ -47,6 +47,11 @@
         <button id="administrators" type="button" class="btn btn-info">Отчеты агента</button>
         <!--<button id="administrators" type="button" class="btn btn-info">Отзывы</button>-->
         <!--<button id="administrators" type="button" class="btn btn-info">Тексты</button>-->
+        <div class="col-md-1"></div>
+        <button id="unlogin-button" type="button" class="btn btn-secondary">Разлогиниться</button>
+        <!--<button id="administrators" type="button" class="btn btn-info">Отзывы</button>-->
+        <!--<button id="administrators" type="button" class="btn btn-info">Тексты</button>-->
+    </div>
     </div>
 
 </div>
@@ -210,17 +215,51 @@
             <input class="form-control" type="text" placeholder="нет данных" id="investor-input">
         </div>
     </div>
+    <!--<div class="form-group row">-->
+        <!--<label for="chart-input" class="col-4 col-form-label">График погашения</label>-->
+        <!--<div class="col-8" id="chart-input">-->
+            <!--<button type="button" class="btn btn-primary">Показать</button>-->
+            <!--<button type="button" class="btn btn-secondary">Скачать</button>-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="form-group row">
-        <label for="chart-input" class="col-4 col-form-label">График погашения</label>
         <div class="col-8" id="chart-input">
-            <button type="button" class="btn btn-primary">Показать</button>
-            <button type="button" class="btn btn-secondary">Скачать</button>
+            <button type="button" class="btn btn-primary">Отправить заявку</button>
         </div>
     </div>
 
 </div>
 <div class="col-md-2"></div>
 <script>
+    function unlogin() {
+        $.removeCookie("bankex_role");
+        window.location.href = host;
+    }
+
+    function changeLocation(role) {
+
+        if(role){
+
+            var page = "index";
+
+            switch (role){
+                case "bank":
+                case "agent":
+                case "investor":
+                    page = "18";
+                    break;
+                case "portfolio":
+                    page = "19";
+                    break;
+                case "yur":
+                    page = "25";
+                    break;
+            }
+
+            window.location.href = host + page + ".html";
+        }
+    }
+
 </script>
 </body>
 </html>

@@ -47,6 +47,11 @@
             <button type="button" class="btn btn-info">Отчеты агентов</button>
             <!--<button id="administrators" type="button" class="btn btn-info">Отзывы</button>-->
             <!--<button id="administrators" type="button" class="btn btn-info">Тексты</button>-->
+        <div class="col-md-1"></div>
+        <button id="unlogin-button" type="button" class="btn btn-secondary">Разлогиниться</button>
+        <!--<button id="administrators" type="button" class="btn btn-info">Отзывы</button>-->
+        <!--<button id="administrators" type="button" class="btn btn-info">Тексты</button>-->
+    </div>
     </div>
     <div class="help-block"></div>
 
@@ -104,6 +109,35 @@
 </div>
 
 <script>
+
+    function unlogin() {
+        $.removeCookie("bankex_role");
+        window.location.href = host;
+    }
+
+    function changeLocation(role) {
+
+        if(role){
+
+            var page = "index";
+
+            switch (role){
+                case "bank":
+                case "agent":
+                case "investor":
+                    page = "18";
+                    break;
+                case "portfolio":
+                    page = "19";
+                    break;
+                case "yur":
+                    page = "25";
+                    break;
+            }
+
+            window.location.href = host + page + ".html";
+        }
+    }
 
     var productInfo = [{
         name: "Портфель мсб отказники март 2017",

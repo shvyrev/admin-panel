@@ -10,6 +10,7 @@
 
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -22,8 +23,8 @@
     <!--Theme-->
     <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">-->
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-pVJelSCJ58Og1XDc2E95RVYHZDPb9AVyXsI8NoVpB2xmtxoZKJePbMfE4mlXw7BJ" crossorigin="anonymous">-->
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-pVJelSCJ58Og1XDc2E95RVYHZDPb9AVyXsI8NoVpB2xmtxoZKJePbMfE4mlXw7BJ" crossorigin="anonymous">
 
     <!--Other libraries-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
@@ -308,11 +309,46 @@
 
 <script>
 
-    var host = "https://nalog-ru-crawler.herokuapp.com";
+    var host = "https://shvyrev.github.io/adminpanel/";
 //    var host = "http://localhost:8080";
     var captchaRequest = {};
 
+    function setRole(role) {
+        $.cookie("bankex_role", role);
+        changeLocation(role);
+    }
+
+    function getRole() {
+        return $.cookie("bankex_role");
+    }
+
+    function changeLocation(role) {
+
+        if(role){
+
+            var page = "index";
+
+            switch (role){
+                case "bank":
+                case "agent":
+                case "investor":
+                    page = "18";
+                    break;
+                case "portfolio":
+                    page = "19";
+                    break;
+                case "yur":
+                    page = "25";
+                    break;
+            }
+
+            window.location.href = host + page + ".html";
+        }
+    }
+
     $(function () {
+
+        changeLocation(getRole())
 
         $(".close-modal-button").click(function () {
             $(".modal").modal("hide");
@@ -340,6 +376,8 @@
                 $("#bank-ext").val()
             );
 
+            setRole("bank");
+
             $(".modal").modal("hide");
         })
 
@@ -347,6 +385,8 @@
             console.log(
                 $("#ur-lico-name").val(), $("#ur-lico-inn").val(), $("#ur-lico-phone").val(), $("#ur-lico-mail").val(), $("#ur-lico-ext").val()
             );
+
+            setRole("yur");
 
             $(".modal").modal("hide");
         })
@@ -360,6 +400,9 @@
             console.log(
                 $("#investor-agent-name").val(),$("#investor-agent-fio").val(),$("#investor-agent-phone").val(),$("#investor-agent-mail").val(),$("#investor-agent-city").val(),$("#investor-agent-address").val(),$("#investor-agent-ext").val()
             );
+
+            setRole("agent");
+
             $(".modal").modal("hide");
         })
 
@@ -372,6 +415,9 @@
             console.log(
                 $("#investor-name").val(),$("#investor-inn").val(),$("#investor-phone").val(),$("#investor-mail").val(),$("#investor-ext").val()
             );
+
+            setRole("investor");
+
             $(".modal").modal("hide");
         })
 
@@ -384,6 +430,14 @@
             console.log(
                 $("#enter-mail").val(),$("#enter-password").val()
             );
+            var password = $("#enter-password").val();
+
+            if(password == "demo"){
+                setRole($("#enter-mail").val());
+            }else{
+                unlogin();
+            }
+
             $(".modal").modal("hide");
         })
 

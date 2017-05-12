@@ -10,6 +10,7 @@
 
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -45,14 +46,16 @@
             <!--<button id="aistrators" type="button" class="btn btn-info">Сделки по инвестициям</button>-->
             <button type="button" class="btn btn-info">Книга  Заявок</button>
             <button type="button" class="btn btn-info">Отчеты агентов</button>
+        <div class="col-md-1"></div>
+            <button id="unlogin-button" type="button" class="btn btn-secondary">Разлогиниться</button>
             <!--<button id="administrators" type="button" class="btn btn-info">Отзывы</button>-->
             <!--<button id="administrators" type="button" class="btn btn-info">Тексты</button>-->
-    </div>
+        </div>
     <div class="help-block"></div>
 
     <div class="row">
-        <button type="button" class="btn btn-secondary">Редактировать регистрационную информацию</button>
-        <button type="button" class="btn btn-secondary">Добавить  портфель/ реестр заявок</button>
+        <!--<button type="button" class="btn btn-secondary">Редактировать регистрационную информацию</button>-->
+        <!--<button type="button" class="btn btn-secondary">Добавить  портфель/ реестр заявок</button>-->
     </div>
     <div class="help-block"></div>
 
@@ -123,7 +126,44 @@
         ext: "отказники мсб",
     }];
 
+    var host = "https://shvyrev.github.io/adminpanel/";
+
+    function unlogin() {
+        $.removeCookie("bankex_role");
+//        window.location.href = host;
+        changeLocation("home");
+    }
+
+    function changeLocation(role) {
+
+        if(role){
+
+            var page = "index";
+
+            switch (role){
+                case "bank":
+                case "agent":
+                case "investor":
+                    page = "18";
+                    break;
+                case "portfolio":
+                    page = "19";
+                    break;
+                case "yur":
+                    page = "25";
+                    break;
+            }
+
+            window.location.href = host + page + ".html";
+        }
+    }
+
     $(function () {
+
+        $("#unlogin-button").click(function () {
+            unlogin()
+        });
+
         regInfo.forEach(
             function (item, i, array) {
                 $("#reg-table > tbody:last-child")
@@ -155,7 +195,7 @@
                         "<td>" + item.agent_limit + "</td>" +
                         "<td>" + item.client_limit + "</td>" +
                         "<td>" + item.ext + "</td>" +
-                        "<td><button type=\"button\" class=\"btn btn-danger btn-sm\" onclick=\"javascript: deleteRow(this);\"><span class=\"glyphicon glyphicon-search\"></span></button></td>" +
+                        "<td><button type=\"button\" class=\"btn btn-danger btn-sm\" onclick=\"javascript: changeLocation('portfolio');\"><span class=\"glyphicon glyphicon-search portfolio\"></span></button></td>" +
                         "</tr>");
 
             }
