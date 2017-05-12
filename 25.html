@@ -10,6 +10,7 @@
 
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -231,10 +232,21 @@
 </div>
 <div class="col-md-2"></div>
 <script>
+
+    var host = "https://shvyrev.github.io/adminpanel/";
+
     function unlogin() {
         $.removeCookie("bankex_role");
         window.location.href = host;
     }
+
+    $(function () {
+
+        $("#unlogin-button").click(function () {
+            unlogin()
+        });
+
+    })
 
     function changeLocation(role) {
 
