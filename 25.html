@@ -240,7 +240,56 @@
         window.location.href = host;
     }
 
+    function readField() {
+        if($.cookie("bankex-yur-name")){
+            $("#name-input").val($.cookie("bankex-yur-name"));
+        }
+        if($.cookie("bankex-yur-inn")){
+            $("#inn-input").val($.cookie("bankex-yur-inn"));
+        }
+        if($.cookie("bankex-yur-phone")){
+            $("#phone-input").val($.cookie("bankex-yur-phone"));
+        }
+        if($.cookie("bankex-yur-mail")){
+            $("#mail-input").val($.cookie("bankex-yur-mail"));
+        }
+        if($.cookie("bankex-yur-ext")){
+            $("#ext-input").val($.cookie("bankex-yur-ext"));
+        }
+    }
+
     $(function () {
+
+        readField();
+
+//        <input class="form-control" type="text" placeholder="нет данных" id="name-input">
+//            </div>
+//            </div>
+//            <div class="form-group row">
+//            <label for="inn-input" class="col-4 col-form-label">ИНН</label>
+//            <div class="col-8">
+//            <input class="form-control" type="text" placeholder="нет данных" id="inn-input">
+//            </div>
+//            </div>
+//            <div class="form-group row">
+//            <label for="phone-input" class="col-4 col-form-label">Телефон</label>
+//            <div class="col-8">
+//            <input class="form-control" type="text" value="+79168149060" placeholder="нет данных" id="phone-input">
+//            </div>
+//            </div>
+//            <div class="form-group row">
+//            <label for="mail-input" class="col-4 col-form-label">емейл</label>
+//            <div class="col-8">
+//            <input class="form-control" type="text" placeholder="нет данных" id="mail-input">
+//            </div>
+//            </div>
+//            <div class="form-group row">
+//            <label for="ext-input" class="col-4 col-form-label">Дополнительная информация</label>
+//        <div class="col-8">
+//            <input class="form-control" type="text" placeholder="нет данных" id="ext-input">
+//            </div>
+//            </div>
+
 
         $("#unlogin-button").click(function () {
             unlogin()

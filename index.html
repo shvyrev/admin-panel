@@ -382,9 +382,32 @@
         })
 
         $("#ur-lico-reg-button").click(function () {
+
             console.log(
                 $("#ur-lico-name").val(), $("#ur-lico-inn").val(), $("#ur-lico-phone").val(), $("#ur-lico-mail").val(), $("#ur-lico-ext").val()
             );
+
+            if($("#ur-lico-name").val()){
+                $.cookie("bankex-yur-name", $("#ur-lico-name").val());
+            }
+
+            if($("#ur-lico-inn").val()){
+                $.cookie("bankex-yur-inn", $("#ur-lico-inn").val());
+                alert($.cookie("bankex-yur-inn"))
+            }
+
+            if($("#ur-lico-phone").val()){
+                $.cookie("bankex-yur-phone", $("#ur-lico-phone").val());
+                alert($.cookie("bankex-yur-phone"))
+            }
+
+            if($("#ur-lico-mail").val()){
+                $.cookie("bankex-yur-mail", $("#ur-lico-mail").val());
+            }
+
+            if($("#ur-lico-ext").val()){
+                $.cookie("bankex-yur-ext", $("#ur-lico-ext").val());
+            }
 
             setRole("yur");
 
