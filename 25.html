@@ -243,18 +243,23 @@
     function readField() {
         if($.cookie("bankex-yur-name")){
             $("#name-input").val($.cookie("bankex-yur-name"));
+            $("#name-input").removeAttr("placeholder");
         }
         if($.cookie("bankex-yur-inn")){
             $("#inn-input").val($.cookie("bankex-yur-inn"));
+            $("#name-input").removeAttr("placeholder");
         }
         if($.cookie("bankex-yur-phone")){
             $("#phone-input").val($.cookie("bankex-yur-phone"));
+            $("#name-input").removeAttr("placeholder");
         }
         if($.cookie("bankex-yur-mail")){
             $("#mail-input").val($.cookie("bankex-yur-mail"));
+            $("#name-input").removeAttr("placeholder");
         }
         if($.cookie("bankex-yur-ext")){
             $("#ext-input").val($.cookie("bankex-yur-ext"));
+            $("#name-input").removeAttr("placeholder");
         }
     }
 
