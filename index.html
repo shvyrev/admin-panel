@@ -124,6 +124,10 @@
                     <div class="input-group">
                         <input type="text" class="form-control" required id="ur-lico-inn">
                     </div>
+                    <label for="captcha-text">ФИО представителя юрлица</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="ur-lico-fio">
+                    </div>
                     <label for="captcha-text">Телефон</label>
                     <div class="input-group">
                         <input type="text" class="form-control" required id="ur-lico-phone">
@@ -370,7 +374,7 @@
         });
 
         $("#ur-lico-registration").click(function () {
-            $("#ur-lico-name").val(""), $("#ur-lico-inn").val(""), $("#ur-lico-phone").val(""), $("#ur-lico-mail").val(""), $("#ur-lico-ext").val("");
+            $("#ur-lico-name").val(""), $("#ur-lico-inn").val(""), $("#ur-lico-phone").val(""), $("#ur-lico-fio").val(""), $("#ur-lico-mail").val(""), $("#ur-lico-ext").val("");
             $("#ur-lico-modal").modal("show");
         });
 
@@ -394,7 +398,7 @@
         $("#ur-lico-reg-button").click(function () {
 
             console.log(
-                $("#ur-lico-name").val(), $("#ur-lico-inn").val(), $("#ur-lico-phone").val(), $("#ur-lico-mail").val(), $("#ur-lico-ext").val()
+                $("#ur-lico-name").val(), $("#ur-lico-inn").val(), $("#ur-lico-phone").val(),$("#ur-lico-fio").val(), $("#ur-lico-mail").val(), $("#ur-lico-ext").val()
             );
 
             if($("#ur-lico-name").val()){
@@ -407,6 +411,10 @@
 
             if($("#ur-lico-phone").val()){
                 $.cookie("bankex-yur-phone", $("#ur-lico-phone").val());
+            }
+
+            if($("#ur-lico-fio").val()){
+                $.cookie("bankex-yur-fio", $("#ur-lico-fio").val());
             }
 
             if($("#ur-lico-mail").val()){

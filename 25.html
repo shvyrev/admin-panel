@@ -33,7 +33,7 @@
 <body>
 <div class="container-fluid theme-showcase">
     <div class="help-block"></div>
-    <h3>Личный кабинет юрлица - МСБ заемщика:</h3>
+    <h3>Личный кабинет Клиента Оператора Кредитных Заявок -<br>Рабочее место Администратора Банка с МСБ заемщиками</h3>
     <div class="help-block"></div>
 
     <div class="col-md-10">
@@ -257,7 +257,7 @@
     <!--</div>-->
     <div class="form-group row">
         <div class="col-8" id="chart-input">
-            <button type="button" class="btn btn-primary send-order input-order">Отправить заявку на скоринг</button>
+            <button type="button" class="btn btn-primary send-order" id="send-button">Отправить заявку на скоринг</button>
         </div>
     </div>
 
@@ -315,7 +315,7 @@
             <div class="modal-body">
                 <div class="help-block"></div>
                 <p>Спасибо!</p>
-                <p>Ваша заявка отправлена на аукцион,<br>после ее подтверждения Инвестором Вы получите финальные условия сделки займа<br>в рамках предложенного диапазона.</p>
+                <p>Ваша заявка отправлена на аукцион,<br>после ее подтверждения Инвестором<br>Вы получите финальные условия сделки займа<br>в рамках предложенного диапазона.</p>
                 <div class="help-block"></div>
             </div>
             <div class="modal-footer">
@@ -337,6 +337,17 @@
 //        "отклонена"
     ];
 
+    function guid() {
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            s4() + '-' + s4() + s4() + s4();
+    }
+
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+
     function unlogin() {
         $.removeCookie("bankex_role");
         window.location.href = host;
@@ -353,6 +364,10 @@
         }
         if($.cookie("bankex-yur-phone")){
             $("#phone-input").val($.cookie("bankex-yur-phone"));
+            $("#name-input").removeAttr("placeholder");
+        }
+        if($.cookie("bankex-yur-fio")){
+            $("#fio-yur-input").val($.cookie("bankex-yur-fio"));
             $("#name-input").removeAttr("placeholder");
         }
         if($.cookie("bankex-yur-mail")){
@@ -378,6 +393,8 @@
     var platejTo;
 
     $(function () {
+
+        $("#id-input").val(guid());
 
         $(".relocation").click(function () {
             location.reload();
@@ -421,15 +438,25 @@
             sum = $("#sum-input").val();
             period = $("#period-input").val();
 
-            platejFrom = 1.1*sum/period;
-            platejTo = 1.2*sum/period;
+            platejFrom = Math.round(1.1*sum/period);
+            platejTo = Math.round(1.2*sum/period);
 
-            $("#scoring-stavka").html("Процентная ставка, диапазон от 10 до 20 %. <br>Ориентировочный ежемесячный платеж, диапазон, от " + platejFrom + " до " + platejTo);
+            $("#scoring-stavka").html("Процентная ставка, диапазон от 10 до 20 %. <br>Ориентировочный ежемесячный платеж, диапазон, от " + platejFrom + "руб. до " + platejTo + "руб.");
 
             $("#result-sum").val(sum);
             $("#result-period").val(period);
 
-            $(".input-order").remove();
+            $("#send-button").remove();
+
+            $("#id-input").attr( "disabled", true );
+            $("#sum-input").attr( "disabled", true );
+            $("#period-input").attr( "disabled", true );
+            $("#debit-input").attr( "disabled", true );
+            $("#yur-scheme-input").attr( "disabled", true );
+            $("#otrasl-input").attr( "disabled", true );
+            $("#ext-2-input").attr( "disabled", true );
+            $("#upload-button").attr( "disabled", true );
+
             $("#order-status").removeClass("hidden");
             changeOrderStatus();
             statusInterval = setInterval(function () {
@@ -442,7 +469,7 @@
                     $(".scorring-result").removeClass("hidden");
 
                 }
-            }, 1000);
+            }, 5000);
 
         })
 //        $(':file').on('fileselect', function(event, numFiles, label) {
