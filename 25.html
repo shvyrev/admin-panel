@@ -61,7 +61,7 @@
 <div class="col-md-8">
     <h3>Регистрационная информация</h3>
     <div class="form-group row">
-        <label for="name-input" class="col-4 col-form-label">Название юрлица</label>
+        <label for="name-input" class="col-4 col-form-label">Название юрлица - МСБ заемщика:</label>
         <div class="col-8">
             <input class="form-control" type="text" placeholder="нет данных" id="name-input">
         </div>
@@ -73,15 +73,21 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="phone-input" class="col-4 col-form-label">Телефон</label>
+        <label for="phone-input" class="col-4 col-form-label">Контактный телефон:</label>
         <div class="col-8">
             <input class="form-control" type="text" value="+79168149060" placeholder="нет данных" id="phone-input">
         </div>
     </div>
     <div class="form-group row">
-        <label for="mail-input" class="col-4 col-form-label">емейл</label>
+        <label for="mail-input" class="col-4 col-form-label">Контактный email:</label>
         <div class="col-8">
             <input class="form-control" type="text" placeholder="нет данных" id="mail-input">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="fio-yur-input" class="col-4 col-form-label">ФИО представителя юрлица:</label>
+        <div class="col-8">
+            <input class="form-control" type="text" placeholder="нет данных" id="fio-yur-input">
         </div>
     </div>
     <div class="form-group row">
@@ -91,21 +97,15 @@
         </div>
     </div>
     <div class="block-helper"></div>
-    <h3>Продуктовая информация - Портфели/реестры заявок</h3>
+    <h3>Кредитная заявка</h3>
+    <!--<div class="form-group row">-->
+        <!--<label for="count-input" class="col-4 col-form-label">№</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="count-input">-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="form-group row">
-        <label for="count-input" class="col-4 col-form-label">№</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="count-input">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="id-input" class="col-4 col-form-label">ID</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="id-input">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="id-input" class="col-4 col-form-label">Статус обработки заявки</label>
+        <label for="id-input" class="col-4 col-form-label">ID заявки</label>
         <div class="col-8">
             <input class="form-control" type="text" placeholder="нет данных" id="id-input">
         </div>
@@ -164,6 +164,14 @@
             <input class="form-control" type="text" placeholder="нет данных" id="ext-2-input">
         </div>
     </div>
+
+    <div class="form-group row">
+        <label for="id-input" class="col-4 col-form-label">Статус обработки заявки</label>
+        <div class="col-8">
+            <input class="form-control" type="text" placeholder="нет данных" id="id-input">
+        </div>
+    </div>
+
     <div class="block-helper"></div>
     <h3>Скоринговая информация</h3>
     <div class="form-group row">
