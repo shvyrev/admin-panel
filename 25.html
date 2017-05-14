@@ -97,43 +97,45 @@
         </div>
     </div>
     <div class="block-helper"></div>
-    <h3>Кредитная заявка</h3>
+    <h3 class="input-order">Новая Кредитная заявка</h3>
     <!--<div class="form-group row">-->
         <!--<label for="count-input" class="col-4 col-form-label">№</label>-->
         <!--<div class="col-8">-->
             <!--<input class="form-control" type="text" placeholder="нет данных" id="count-input">-->
         <!--</div>-->
     <!--</div>-->
-    <div class="form-group row">
+    <div class="block-helper"></div>
+
+    <div class="form-group row input-order">
         <label for="id-input" class="col-4 col-form-label">ID заявки</label>
         <div class="col-8">
             <input class="form-control" type="text" placeholder="нет данных" id="id-input">
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row input-order">
         <label for="sum-input" class="col-4 col-form-label">Сумма кредита, руб</label>
         <div class="col-8">
             <input class="form-control" type="text" placeholder="нет данных" id="sum-input">
         </div>
     </div>
-    <div class="form-group row">
-        <label for="percent-input" class="col-4 col-form-label">Процент, %</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="percent-input" disabled>
-        </div>
-    </div>
-    <div class="form-group row">
+    <!--<div class="form-group row">-->
+        <!--<label for="percent-input" class="col-4 col-form-label">Процент, %</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="percent-input" disabled>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="form-group row input-order">
         <label for="period-input" class="col-4 col-form-label">Срок займа, в месяцах</label>
         <div class="col-8">
             <input class="form-control" type="text" placeholder="нет данных" id="period-input">
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row input-order">
         <label for="debit-input" class="col-4 col-form-label">Залог:</label>
         <!--<div class="col-8">-->
             <!--<input class="form-control" type="text" placeholder="нет данных" id="debit-input">-->
         <!--</div>-->
-        <div class="btn-group">
+        <div class="btn-group col-8">
             <button class="btn dropdown-toggle" data-toggle="dropdown" id="debit-input">нет</button>
             <ul class="dropdown-menu">
                 <li><a data-name="yes-debit" class="debit-drop-list-item">да</a></li>
@@ -141,96 +143,111 @@
             </ul>
         </div>
     </div>
-    <div class="form-group row">
-        <label for="supplier-limit-input" class="col-4 col-form-label">Ограничения по типу Supplier</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="supplier-limit-input" disabled>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="supplier-limit-2-input" class="col-4 col-form-label">Лимиты на Supplier - конечника</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="supplier-limit-2-input">
-        </div>
-    </div>
-    <div class="form-group row">
+    <!--<div class="form-group row">-->
+        <!--<label for="supplier-limit-input" class="col-4 col-form-label">Ограничения по типу Supplier</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="supplier-limit-input" disabled>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group row">-->
+        <!--<label for="supplier-limit-2-input" class="col-4 col-form-label">Лимиты на Supplier - конечника</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="supplier-limit-2-input">-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="form-group row input-order">
         <label for="yur-scheme-input" class="col-4 col-form-label">Юридическая схема</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="yur-scheme-input">
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="yur-scheme-input">-->
+        <!--</div>-->
+        <div class="btn-group col-8">
+            <button class="btn dropdown-toggle" data-toggle="dropdown" id="yur-scheme-input">прямые договора с кредиторами</button>
+            <ul class="dropdown-menu">
+                <li><a class="yur-drop-list-item">прямые договора с кредиторами</a></li>
+                <li><a class="yur-drop-list-item">займ через МФО</a></li>
+            </ul>
         </div>
     </div>
-    <div class="form-group row">
-        <label for="otrasl-input" class="col-4 col-form-label">Отрасль</label>
+    <div class="form-group row input-order">
+        <label for="otrasl-input" class="col-4 col-form-label">Отрасль:</label>
         <div class="col-8">
             <input class="form-control" type="text" placeholder="нет данных" id="otrasl-input">
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row input-order">
         <label for="ext-2-input" class="col-4 col-form-label">Дополнительная информация</label>
         <div class="col-8">
             <input class="form-control" type="text" placeholder="нет данных" id="ext-2-input">
         </div>
     </div>
-
-    <div class="form-group row">
-        <label for="id-status" class="col-4 col-form-label">Статус обработки заявки</label>
+    <div class="form-group row input-order">
+        <label for="ext-2-input" class="col-4 col-form-label">Загрузите банковскую выписку:<br>- период выписки - за год;<br>- в формате как для 1С:Бухгалтерии, стандартная бухгалтерская банковская выписка;</label>
         <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="id-status">
+            <label class="btn btn-default btn-file" id="upload-button">
+                Загрузить <input type="file" style="display: none;">
+            </label>
         </div>
     </div>
 
-    <div class="block-helper"></div>
-    <h3>Скоринговая информация</h3>
-    <div class="form-group row">
-        <label for="scoring-status-input" class="col-4 col-form-label">Скоринг статус</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="scoring-status-input">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="scoring-result-input" class="col-4 col-form-label">Скоринг результат обработки банковской тайны</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="scoring-result-input">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="scoring-result-2-input" class="col-4 col-form-label">Скоринг результат из внешних источников</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="scoring-result-2-input">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="scoring-result-3-input" class="col-4 col-form-label">Скоринг решение, класс риска</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="scoring-result-3-input">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="scoring-info-input" class="col-4 col-form-label">Скоринг справка</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="scoring-info-input">
-        </div>
-    </div>
-    <div class="block-helper"></div>
-    <h3>Информация по займу юрлица</h3>
-    <div class="form-group row">
-        <label for="loan-status-input" class="col-4 col-form-label">Займ выдан</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="loan-status-input">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="loan-date-input" class="col-4 col-form-label">Дата выдачи</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="loan-date-input">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="investor-input" class="col-4 col-form-label">Инвестор</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="investor-input">
-        </div>
-    </div>
+    <!--<div class="form-group row">-->
+        <!--<label for="id-status" class="col-4 col-form-label">Статус обработки заявки</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="id-status">-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="block-helper"></div>-->
+    <!--<h3>Скоринговая информация</h3>-->
+    <!--<div class="form-group row">-->
+        <!--<label for="scoring-status-input" class="col-4 col-form-label">Скоринг статус</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="scoring-status-input">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group row">-->
+        <!--<label for="scoring-result-input" class="col-4 col-form-label">Скоринг результат обработки банковской тайны</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="scoring-result-input">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group row">-->
+        <!--<label for="scoring-result-2-input" class="col-4 col-form-label">Скоринг результат из внешних источников</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="scoring-result-2-input">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group row">-->
+        <!--<label for="scoring-result-3-input" class="col-4 col-form-label">Скоринг решение, класс риска</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="scoring-result-3-input">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group row">-->
+        <!--<label for="scoring-info-input" class="col-4 col-form-label">Скоринг справка</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="scoring-info-input">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="block-helper"></div>-->
+    <!--<h3>Информация по займу юрлица</h3>-->
+    <!--<div class="form-group row">-->
+        <!--<label for="loan-status-input" class="col-4 col-form-label">Займ выдан</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="loan-status-input">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group row">-->
+        <!--<label for="loan-date-input" class="col-4 col-form-label">Дата выдачи</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="loan-date-input">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group row">-->
+        <!--<label for="investor-input" class="col-4 col-form-label">Инвестор</label>-->
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="investor-input">-->
+        <!--</div>-->
+    <!--</div>-->
     <!--<div class="form-group row">-->
         <!--<label for="chart-input" class="col-4 col-form-label">График погашения</label>-->
         <!--<div class="col-8" id="chart-input">-->
@@ -240,15 +257,85 @@
     <!--</div>-->
     <div class="form-group row">
         <div class="col-8" id="chart-input">
-            <button type="button" class="btn btn-primary">Отправить заявку</button>
+            <button type="button" class="btn btn-primary send-order input-order">Отправить заявку на скоринг</button>
+        </div>
+    </div>
+
+    <div class="form-group row hidden" id="order-status">
+        <label for="ext-2-input" class="col-4 col-form-label">Статус обработки заявки:</label>
+        <div class="col-8">
+            <img src="http://www.selloceaapq.es/Images/loading2.gif" width="50px" height="50px">
+            <button type="button" class="btn btn-info" id="order-status-button"></button>
+        </div>
+    </div>
+
+    <div class="form-group row scorring-result hidden">
+        <label>Вам одобрен кредит на следующих условиях:</label>
+    </div>
+
+    <div class="form-group row scorring-result hidden">
+        <label for="result-sum" class="col-4 col-form-label">Сумма, в рублях</label>
+        <div class="col-8">
+            <input disabled class="form-control" type="text" placeholder="нет данных" id="result-sum">
+        </div>
+    </div>
+    <div class="form-group row scorring-result hidden">
+        <label for="result-period" class="col-4 col-form-label">Срок, в месяцах</label>
+        <div class="col-8">
+            <input disabled class="form-control" type="text" placeholder="нет данных" id="result-period">
+        </div>
+
+    </div>
+    <div class="form-group row scorring-result hidden">
+        <label id="scoring-stavka" class="scorring-result"></label>
+    </div>
+    <div class="block-helper"></div>
+    <div class="form-group row scorring-result hidden">
+        <div class="col-4">
+            <button type="button" class="btn btn-second relocation">Отказаться</button>
+        </div>
+        <div class="col-4">
+            <button id="agree-button" type="button" class="btn btn-primary">Принять предложение</button>
         </div>
     </div>
 
 </div>
 <div class="col-md-2"></div>
+
+
+<div id="order-modal" class="modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="help-block"></div>
+                <p>Спасибо!</p>
+                <p>Ваша заявка отправлена на аукцион,<br>после ее подтверждения Инвестором Вы получите финальные условия сделки займа<br>в рамках предложенного диапазона.</p>
+                <div class="help-block"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary relocation" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 
     var host = "https://shvyrev.github.io/adminpanel/";
+
+    var orderStatus = [
+        "черновик",
+        "отправлена",
+        "в работе",
+        "одобрена",
+//        "отклонена"
+    ];
 
     function unlogin() {
         $.removeCookie("bankex_role");
@@ -278,7 +365,37 @@
         }
     }
 
+    var statusInterval;
+    var statusCount = 0;
+    function changeOrderStatus() {
+        $("#order-status-button").text(orderStatus[statusCount]);
+    }
+
+    var sum;
+    var period;
+
+    var platejFrom;
+    var platejTo;
+
     $(function () {
+
+        $(".relocation").click(function () {
+            location.reload();
+        })
+
+        $('#button').button();
+
+        $('#button').click(function() {
+            $(this).html('<img src="http://www.bba-reman.com/images/fbloader.gif" />');
+        });
+
+        $("#agree-button").click(function () {
+            $("#order-modal").modal("show");
+        });
+
+        $("#agree-button").click(function () {
+            $("#order-modal").modal("show");
+        });
 
         readField();
 
@@ -286,6 +403,59 @@
             var name = e.currentTarget;
             $("#debit-input").text(name.innerHTML);
         });
+
+        $(".yur-drop-list-item").click(function(e) {
+            var name = e.currentTarget;
+            $("#yur-scheme-input").text(name.innerHTML);
+        });
+
+        $("#upload-button").on("change", function (e) {
+            console.log(e.target.files[0].name);
+            if(e.target.files[0].name){
+                $("#upload-button").text(e.target.files[0].name);
+            }
+        })
+
+        $(".send-order").click(function () {
+
+            sum = $("#sum-input").val();
+            period = $("#period-input").val();
+
+            platejFrom = 1.1*sum/period;
+            platejTo = 1.2*sum/period;
+
+            $("#scoring-stavka").html("Процентная ставка, диапазон от 10 до 20 %. <br>Ориентировочный ежемесячный платеж, диапазон, от " + platejFrom + " до " + platejTo);
+
+            $("#result-sum").val(sum);
+            $("#result-period").val(period);
+
+            $(".input-order").remove();
+            $("#order-status").removeClass("hidden");
+            changeOrderStatus();
+            statusInterval = setInterval(function () {
+                statusCount++;
+                if(statusCount < orderStatus.length){
+                    changeOrderStatus();
+                }else{
+                    clearInterval(statusInterval);
+                    $("#order-status").remove();
+                    $(".scorring-result").removeClass("hidden");
+
+                }
+            }, 1000);
+
+        })
+//        $(':file').on('fileselect', function(event, numFiles, label) {
+//            console.log(numFiles);
+//            console.log(label);
+//        });
+
+//        $(document).on('change', ':file', function() {
+//            var input = $(this),
+//                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+//                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+//            input.trigger('fileselect', [numFiles, label]);
+//        });
 
 
 //        <input class="form-control" type="text" placeholder="нет данных" id="name-input">
