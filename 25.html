@@ -33,7 +33,7 @@
 <body>
 <div class="container-fluid theme-showcase">
     <div class="help-block"></div>
-    <h3>Личный кабинет юрлица - заемщика</h3>
+    <h3>Личный кабинет юрлица - МСБ заемщика:</h3>
     <div class="help-block"></div>
 
     <div class="col-md-10">
@@ -111,7 +111,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="sum-input" class="col-4 col-form-label">Сумма, руб</label>
+        <label for="sum-input" class="col-4 col-form-label">Сумма кредита, руб</label>
         <div class="col-8">
             <input class="form-control" type="text" placeholder="нет данных" id="sum-input">
         </div>
@@ -119,19 +119,26 @@
     <div class="form-group row">
         <label for="percent-input" class="col-4 col-form-label">Процент, %</label>
         <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="percent-input">
+            <input class="form-control" type="text" placeholder="нет данных" id="percent-input" disabled>
         </div>
     </div>
     <div class="form-group row">
-        <label for="period-input" class="col-4 col-form-label">Срок, %</label>
+        <label for="period-input" class="col-4 col-form-label">Срок займа, в месяцах</label>
         <div class="col-8">
             <input class="form-control" type="text" placeholder="нет данных" id="period-input">
         </div>
     </div>
     <div class="form-group row">
-        <label for="debit-input" class="col-4 col-form-label">Залоговые</label>
-        <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="debit-input">
+        <label for="debit-input" class="col-4 col-form-label">Залог:</label>
+        <!--<div class="col-8">-->
+            <!--<input class="form-control" type="text" placeholder="нет данных" id="debit-input">-->
+        <!--</div>-->
+        <div class="btn-group">
+            <button class="btn dropdown-toggle" data-toggle="dropdown" id="debit-input">нет</button>
+            <ul class="dropdown-menu">
+                <li><a data-name="yes-debit" class="drop-list-item">да</a></li>
+                <li><a data-name="no-debit" class="drop-list-item">нет</a></li>
+            </ul>
         </div>
     </div>
     <div class="form-group row">
@@ -166,9 +173,9 @@
     </div>
 
     <div class="form-group row">
-        <label for="id-input" class="col-4 col-form-label">Статус обработки заявки</label>
+        <label for="id-status" class="col-4 col-form-label">Статус обработки заявки</label>
         <div class="col-8">
-            <input class="form-control" type="text" placeholder="нет данных" id="id-input">
+            <input class="form-control" type="text" placeholder="нет данных" id="id-status">
         </div>
     </div>
 
@@ -274,6 +281,12 @@
     $(function () {
 
         readField();
+
+        $(".debit-drop-list-item").click(function(e) {
+            var name = e.currentTarget;
+            $("#debit-input").text(name.innerHTML);
+        });
+
 
 //        <input class="form-control" type="text" placeholder="нет данных" id="name-input">
 //            </div>
