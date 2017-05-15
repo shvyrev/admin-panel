@@ -67,31 +67,35 @@
                 <div class="modal-body">
                     <div class="help-block"></div>
                     <p>Введите информацию о Вашем банке:</p>
-                    <label for="captcha-text">Название</label>
+                    <label for="captcha-text">Название банка:</label>
                     <div class="input-group">
                         <input type="text" class="form-control" required id="bank-name">
                     </div>
-                    <label for="captcha-text">ФИО представителя</label>
+                    <label for="captcha-text">ФИО представителя:</label>
                     <div class="input-group">
                         <input type="text" class="form-control" required id="bank-fio-admin">
+                    </div>
+                    <label for="captcha-text">Должность представителя:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" required id="bank-post-admin">
                     </div>
                     <label for="captcha-text">Телефон представителя</label>
                     <div class="input-group">
                         <input type="text" class="form-control" required id="bank-phone-admin">
                     </div>
-                    <label for="captcha-text">email представителя</label>
+                    <label for="captcha-text">Email представителя:</label>
                     <div class="input-group">
                         <input type="text" class="form-control" required id="bank-mail-admin">
                     </div>
-                    <label for="captcha-text">Город банка</label>
+                    <label for="captcha-text">Город Банка:</label>
                     <div class="input-group">
                         <input type="text" class="form-control" required id="bank-city">
                     </div>
-                    <label for="captcha-text">Юридический адрес банка</label>
+                    <label for="captcha-text">БИК:</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" required id="bank-address">
+                        <input type="text" class="form-control" required id="bank-bik">
                     </div>
-                    <label for="captcha-text">Дополнительная информация</label>
+                    <label for="captcha-text">Дополнительная информация:</label>
                     <div class="input-group">
                         <textarea class="form-control" required id="bank-ext"></textarea>
                     </div>
@@ -371,7 +375,7 @@
     }
 
     function openBankRegistration() {
-        $("#bank-name").val(""), $("#bank-fio-admin").val(""), $("#bank-phone-admin").val(""), $("#bank-mail-admin").val(""), $("#bank-city").val(""), $("#bank-address").val(""), $("#bank-ext").val("");
+        $("#bank-name").val(""), $("#bank-fio-admin").val(""), $("#bank-phone-admin").val(""), $("#bank-mail-admin").val(""), $("#bank-city").val(""), $("#bank-bik").val(""), $("#bank-ext").val("");
         $("#bank-modal").modal("show");
     }
 
@@ -445,9 +449,41 @@
                 $("#bank-phone-admin").val(),
                 $("#bank-mail-admin").val(),
                 $("#bank-city").val(),
-                $("#bank-address").val(),
+                $("#bank-bik").val(),
                 $("#bank-ext").val()
             );
+
+            if($("#bank-name").val()){
+                $.cookie("bankex-bank-name", $("#bank-name").val());
+            }
+
+            if($("#bank-fio-admin").val()){
+                $.cookie("bankex-bank-fio-admin", $("#bank-fio-admin").val());
+            }
+
+            if($("#bank-post-admin").val()){
+                $.cookie("bankex-bank-post-admin", $("#bank-post-admin").val());
+            }
+
+            if($("#bank-phone-admin").val()){
+                $.cookie("bankex-phone-admin", $("#bank-phone-admin").val());
+            }
+
+            if($("#bank-mail-admin").val()){
+                $.cookie("bankex-bank-mail-admin", $("#bank-mail-admin").val());
+            }
+
+            if($("#bank-city").val()){
+                $.cookie("bankex-bank-city", $("#bank-city").val());
+            }
+
+            if($("#bank-bik").val()){
+                $.cookie("bankex-bank-bik", $("#bank-bik").val());
+            }
+
+            if($("#bank-ext").val()){
+                $.cookie("bankex-bank-ext", $("#bank-ext").val());
+            }
 
             setRole("bank");
 
