@@ -431,7 +431,10 @@
             openDefaultPage(defaultPage);
         }
 
-        changeLocation(getRole())
+        var role = getRole();
+        if(role != "inspektor"){
+            changeLocation(role);
+        }
 
         $(".close-modal-button").click(function () {
             $(".modal").modal("hide");
