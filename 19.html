@@ -33,25 +33,25 @@
 <body>
 <div class="container-fluid theme-showcase">
     <div class="help-block"></div>
-    <h3>Личный кабинет Банка с мсб заемщиками - Администратора агента заемщика - заемщики</h3>
+    <h3>Личный кабинет Клиента Оператора Кредитных Заявок -<br>Рабочее место Администратора Банка с МСБ заемщиками</h3>
     <div class="help-block"></div>
 
     <div class="row">
-            <!--<button id="administrators" type="button" class="btn btn-info">Администраторы</button>-->
-            <button type="button" class="btn btn-info">Банки(агенты мсб)</button>
-            <button type="button" class="btn btn-info">Заемщик</button>
-            <button type="button" class="btn btn-info">Сделки по займу</button>
-            <!--<button id="administrators" type="button" class="btn btn-info">Представители инвесторов</button>-->
-            <!--<button id="administrators" type="button" class="btn btn-info">Инвестор</button>-->
-            <!--<button id="aistrators" type="button" class="btn btn-info">Сделки по инвестициям</button>-->
-            <button type="button" class="btn btn-info">Книга Заявок</button>
-            <button type="button" class="btn btn-info">Отчеты агентов</button>
-            <!--<button id="administrators" type="button" class="btn btn-info">Отзывы</button>-->
-            <!--<button id="administrators" type="button" class="btn btn-info">Тексты</button>-->
+        <!--<button id="administrators" type="button" class="btn btn-info">Администраторы</button>-->
+        <button type="button" class="btn btn-info" id="reg-bank">Регистрационная информация Банка</button>
+        <button type="button" class="btn btn-info" id="portfolio-bank">Портфели заявок Банка</button>
+        <button type="button" class="btn btn-info" id="lists">Списки заявок МСБ Банка</button>
+        <button type="button" class="btn btn-info">Сделки по займу</button>
+        <!--<button id="administrators" type="button" class="btn btn-info">Представители инвесторов</button>-->
+        <!--<button id="administrators" type="button" class="btn btn-info">Инвестор</button>-->
+        <!--<button id="aistrators" type="button" class="btn btn-info">Сделки по инвестициям</button>-->
+        <button type="button" class="btn btn-info">Книга Заявок</button>
+        <button type="button" class="btn btn-info">Отчеты агентов</button>
         <div class="col-md-1"></div>
         <button id="unlogin-button" type="button" class="btn btn-secondary">Разлогиниться</button>
         <!--<button id="administrators" type="button" class="btn btn-info">Отзывы</button>-->
         <!--<button id="administrators" type="button" class="btn btn-info">Тексты</button>-->
+    </div>
     </div>
     </div>
     <div class="help-block"></div>
@@ -131,10 +131,17 @@
                     page = "18";
                     break;
                 case "portfolio":
+                case "lists":
                     page = "19";
                     break;
                 case "yur":
                     page = "25";
+                    break;
+                case "reg-bank":
+                    page = "18";
+                    break;
+                case "portfolio-bank":
+                    page = "181";
                     break;
             }
 
@@ -179,6 +186,17 @@
 
         $("#unlogin-button").click(function () {
             unlogin()
+        });
+
+        $("#reg-bank").click(function () {
+            changeLocation("reg-bank");
+        });
+
+        $("#portfolio-bank").click(function () {
+            changeLocation("portfolio-bank");
+        });
+        $("#lists").click(function () {
+            changeLocation("lists");
         });
 
         productInfo.forEach(

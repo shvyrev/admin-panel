@@ -39,7 +39,7 @@
     <div class="row">
         <button type="button" class="btn btn-info" id="reg-bank">Регистрационная информация Банка</button>
         <button type="button" class="btn btn-info" id="portfolio-bank">Портфели заявок Банка</button>
-        <button type="button" class="btn btn-info">Списки заявок МСБ Банка</button>
+        <button type="button" class="btn btn-info" id="lists">Списки заявок МСБ Банка</button>
         <button type="button" class="btn btn-info">Сделки по займу</button>
         <!--<button id="administrators" type="button" class="btn btn-info">Представители инвесторов</button>-->
         <!--<button id="administrators" type="button" class="btn btn-info">Инвестор</button>-->
@@ -200,6 +200,7 @@
                     page = "18";
                     break;
                 case "portfolio":
+                case "lists":
                     page = "19";
                     break;
                 case "yur":
@@ -268,6 +269,9 @@
 
         $("#portfolio-bank").click(function () {
             changeLocation("portfolio-bank");
+        });
+        $("#lists").click(function () {
+            changeLocation("lists");
         });
 
 //        regInfo.forEach(
