@@ -360,7 +360,68 @@
         }
     }
 
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    function openBankRegistration() {
+        $("#bank-name").val(""), $("#bank-fio-admin").val(""), $("#bank-phone-admin").val(""), $("#bank-mail-admin").val(""), $("#bank-city").val(""), $("#bank-address").val(""), $("#bank-ext").val("");
+        $("#bank-modal").modal("show");
+    }
+
+    function openYurLicoRegistration() {
+        $("#ur-lico-name").val(""), $("#ur-lico-inn").val(""), $("#ur-lico-phone").val(""), $("#ur-lico-fio").val(""), $("#ur-lico-mail").val(""), $("#ur-lico-ext").val("");
+        $("#ur-lico-modal").modal("show");
+    }
+
+    function openInvestorAgentRegistration() {
+        $("#investor-agent-name").val(""),$("#investor-agent-fio").val(""),$("#investor-agent-phone").val(""),$("#investor-agent-mail").val(""),$("#investor-agent-city").val(""),$("#investor-agent-address").val(""),$("#investor-agent-ext").val("");
+        $("#investor-agent-modal").modal("show");
+    }
+
+    function openInvestorRegistration() {
+        $("#investor-name").val(""),$("#investor-inn").val(""),$("#investor-phone").val(""),$("#investor-mail").val(""),$("#investor-ext").val("");
+        $("#investor-modal").modal("show");
+    }
+
+    function openLoginForm() {
+        $("#enter-mail").val(""),$("#enter-password").val("");
+        $("#enter-modal").modal("show");
+    }
+
+    function openDefaultPage(pageType) {
+        switch (pageType){
+            case "bank":
+                openBankRegistration();
+                break;
+            case "yurlico":
+                openYurLicoRegistration();
+                break;
+            case "investoragent":
+                openInvestorAgentRegistration();
+                break;
+            case "investor":
+                openInvestorRegistration();
+                break;
+            case "login":
+                openLoginForm();
+                break;
+        }
+    }
+
     $(function () {
+
+        var defaultPage = getParameterByName("type");
+
+        if(defaultPage){
+            openDefaultPage(defaultPage);
+        }
 
         changeLocation(getRole())
 
@@ -369,13 +430,11 @@
         });
 
         $("#bank-registration").click(function () {
-            $("#bank-name").val(""), $("#bank-fio-admin").val(""), $("#bank-phone-admin").val(""), $("#bank-mail-admin").val(""), $("#bank-city").val(""), $("#bank-address").val(""), $("#bank-ext").val("");
-            $("#bank-modal").modal("show");
+            openBankRegistration();
         });
 
         $("#ur-lico-registration").click(function () {
-            $("#ur-lico-name").val(""), $("#ur-lico-inn").val(""), $("#ur-lico-phone").val(""), $("#ur-lico-fio").val(""), $("#ur-lico-mail").val(""), $("#ur-lico-ext").val("");
-            $("#ur-lico-modal").modal("show");
+            openYurLicoRegistration();
         });
 
 
@@ -431,8 +490,7 @@
         })
 
         $("#investor-agent-registration").click(function () {
-            $("#investor-agent-name").val(""),$("#investor-agent-fio").val(""),$("#investor-agent-phone").val(""),$("#investor-agent-mail").val(""),$("#investor-agent-city").val(""),$("#investor-agent-address").val(""),$("#investor-agent-ext").val("");
-            $("#investor-agent-modal").modal("show");
+            openInvestorAgentRegistration();
         });
 
         $("#investor-agent-reg-button").click(function () {
@@ -446,8 +504,7 @@
         })
 
         $("#investor-registration").click(function () {
-            $("#investor-name").val(""),$("#investor-inn").val(""),$("#investor-phone").val(""),$("#investor-mail").val(""),$("#investor-ext").val("");
-            $("#investor-modal").modal("show");
+            openInvestorRegistration();
         });
 
         $("#investor-reg-button").click(function () {
@@ -461,8 +518,7 @@
         })
 
         $("#lc-enter").click(function () {
-            $("#enter-mail").val(""),$("#enter-password").val("");
-            $("#enter-modal").modal("show");
+            openLoginForm();
         });
 
         $("#enter-button").click(function () {
