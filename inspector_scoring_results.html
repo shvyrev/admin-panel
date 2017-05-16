@@ -33,7 +33,7 @@
 <body>
 <div class="container-fluid theme-showcase">
     <div class="help-block"></div>
-    <h3>Личный кабинет Клиента Оператора Кредитных Заявок -<br>Список заявок</h3>
+    <h3>Личный кабинет Клиента Оператора Кредитных Заявок -<br>Результаты скоринга</h3>
     <div class="help-block"></div>
 
     <div class="row">
@@ -49,78 +49,6 @@
     </div>
     <div class="help-block"></div>
 
-    <!--<div class="col-md-8">-->
-        <!--<h3>Регистрационная информация</h3>-->
-        <!--<div class="form-group row">-->
-            <!--<label for="name-input" class="col-4 col-form-label">Название банка:</label>-->
-            <!--<div class="col-8">-->
-                <!--<input class="form-control" type="text" placeholder="нет данных" id="name-input">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="form-group row">-->
-            <!--<label for="fio-input" class="col-4 col-form-label">ФИО представителя:</label>-->
-            <!--<div class="col-8">-->
-                <!--<input class="form-control" type="text" placeholder="нет данных" id="fio-input">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="form-group row">-->
-            <!--<label for="post-input" class="col-4 col-form-label">Должность представителя:</label>-->
-            <!--<div class="col-8">-->
-                <!--<input class="form-control" type="text" value="+79168149060" placeholder="нет данных" id="post-input">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="form-group row">-->
-            <!--<label for="phone-input" class="col-4 col-form-label">Телефон представителя:</label>-->
-            <!--<div class="col-8">-->
-                <!--<input class="form-control" type="text" placeholder="нет данных" id="phone-input">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="form-group row">-->
-            <!--<label for="email-input" class="col-4 col-form-label">Email представителя:</label>-->
-            <!--<div class="col-8">-->
-                <!--<input class="form-control" type="text" placeholder="нет данных" id="email-input">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="form-group row">-->
-            <!--<label for="city-input" class="col-4 col-form-label">Город Банка:</label>-->
-            <!--<div class="col-8">-->
-                <!--<input class="form-control" type="text" placeholder="нет данных" id="city-input">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="form-group row">-->
-            <!--<label for="bik-input" class="col-4 col-form-label">БИК:</label>-->
-            <!--<div class="col-8">-->
-                <!--<input class="form-control" type="text" placeholder="нет данных" id="bik-input">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="form-group row">-->
-            <!--<label for="ext-input" class="col-4 col-form-label">Дополнительная информация:</label>-->
-            <!--<div class="col-8">-->
-                <!--<input class="form-control" type="text" placeholder="нет данных" id="ext-input">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="block-helper"></div>-->
-    <!--</div>-->
-
-    <!--<div class="row">-->
-        <!--<label for="reg-table">Регистрационная информация</label>-->
-        <!--<table id="reg-table" class="table">-->
-            <!--<thead>-->
-            <!--<tr>-->
-                <!--<th>№</th>-->
-                <!--<th>Название</th>-->
-                <!--<th>ФИО Представителя</th>-->
-                <!--<th>Телефон представителя</th>-->
-                <!--<th>email представителя</th>-->
-                <!--<th>Город банка</th>-->
-                <!--<th>Юр адрес банка</th>-->
-                <!--<th>Дополнительная информация</th>-->
-            <!--</tr>-->
-            <!--</thead>-->
-            <!--<tbody>-->
-            <!--</tbody>-->
-        <!--</table>-->
-    <!--</div>-->
     <div class="row">
         <label for="order-list-table">Продуктовая информация - Портфели/реестры заявок</label>
         <table id="order-list-table" class="table">
@@ -134,6 +62,7 @@
                 <th>Отрасль</th>
                 <th>Дополнительная информация</th>
                 <th>Банковская выписка</th>
+                <th>Статус заявки</th>
             </tr>
             </thead>
             <tbody>
@@ -144,16 +73,6 @@
 </div>
 <script>
 
-//    var regInfo = [{
-//        name: "СберБанк",
-//        fio : "Долгов Дмитрий Игоревич",
-//        phone : "+79168149060",
-//        mail : "ddi2010@gmail.com",
-//        city : "Москва",
-//        address : "г.Москва, Хорошевское шоссе, д.76 б",
-//        ext : "Есть много отказных кредитных заявок, сообщите какая цена на одну заявку"
-//    }];
-//
     var orderList = [{
         id: guid(),
         sum: 5000000 ,
@@ -168,7 +87,6 @@
 
     function unlogin() {
         $.removeCookie("bankex_role");
-//        window.location.href = host;
         changeLocation("home");
     }
 
@@ -267,9 +185,11 @@
 
     $(function () {
 
-        $("#image-modal").modal("show");
-
         readField();
+
+        $("#unlogin-button").click(function () {
+            unlogin()
+        });
 
         $("#order-list").click(function () {
             changeLocation("order-list");
@@ -294,29 +214,10 @@
                     "<td>" + item.industry + "</td>" +
                     "<td>" + item.ext + "</td>" +
                     "<td><button type=\"button\" class=\"btn btn-danger btn-sm\" onclick=\"javascript: changeLocation('image');\"><span class=\"glyphicon glyphicon-search portfolio\"></span></button></td>" +
+                    "<td>" + "одобрена" + "</td>" +
                     "</tr>");
 
         });
-//
-//        productInfo.forEach(
-//            function (item, i, array) {
-//                $("#product-table > tbody:last-child")
-//                    .append("<tr>" +
-//                        "<td>" + (i + 1) + "</td>" +
-//                        "<td>" + item.name+ "</td>" +
-//                        "<td>" + item.refuse_count + "</td>" +
-//                        "<td>" + item.credit_amount + "</td>" +
-//                        "<td>" + item.period + "</td>" +
-//                        "<td>" + item.deposit + "</td>" +
-//                        "<td>" + item.credit_period + "</td>" +
-//                        "<td>" + item.agent_limit + "</td>" +
-//                        "<td>" + item.client_limit + "</td>" +
-//                        "<td>" + item.ext + "</td>" +
-//                        "<td><button type=\"button\" class=\"btn btn-danger btn-sm\" onclick=\"javascript: changeLocation('portfolio');\"><span class=\"glyphicon glyphicon-search portfolio\"></span></button></td>" +
-//                        "</tr>");
-//
-//            }
-//        );
     })
 </script>
 </body>

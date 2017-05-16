@@ -37,9 +37,9 @@
     <div class="help-block"></div>
 
     <div class="row">
-        <button type="button" class="btn btn-info">Список заявок</button>
-        <button type="button" class="btn btn-info">Крутилка</button>
-        <button type="button" class="btn btn-info">Результаты скоринга</button>
+        <button type="button" class="btn btn-info" id="order-list">Список заявок</button>
+        <button type="button" class="btn btn-info" id="roller">Крутилка</button>
+        <button type="button" class="btn btn-info" id="scoring-results">Результаты скоринга</button>
         <!--<button type="button" class="btn btn-info" id="reg-bank">Регистрационная информация Банка</button>-->
         <!--<button type="button" class="btn btn-info" id="portfolio-bank">Портфели заявок Банка</button>-->
         <!--<button type="button" class="btn btn-info" id="lists">Списки заявок МСБ Банка</button>-->
@@ -215,6 +215,20 @@
                 case "portfolio-bank":
                     page = "181";
                     break;
+                case "order-list":
+                    page = "inspector_order_list";
+                    break;
+                case "scoring-results":
+                    page = "inspector_scoring_results";
+                    break;
+                case "roller":
+                    window.location.href = "https://shvyrev.github.io/site/";
+                    return;
+                    break;
+                case "image":
+                    window.location.href = "https://shvyrev.github.io/adminpanel/images/BankVipis.gif";
+                    return;
+                    break;
             }
 
             window.location.href = host + page + ".html";
@@ -266,15 +280,15 @@
             unlogin()
         });
 
-        $("#reg-bank").click(function () {
-            changeLocation("reg-bank");
+        $("#order-list").click(function () {
+            changeLocation("order-list");
         });
 
-        $("#portfolio-bank").click(function () {
-            changeLocation("portfolio-bank");
+        $("#roller").click(function () {
+            changeLocation("roller");
         });
-        $("#lists").click(function () {
-            changeLocation("lists");
+        $("#scoring-results").click(function () {
+            changeLocation("scoring-results");
         });
 
 //        regInfo.forEach(
