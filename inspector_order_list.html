@@ -162,7 +162,95 @@
         legal_scheme: "схема",
         industry: "отрасль",
         ext: "отказники мсб",
-    }];
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },{
+        id: guid(),
+        sum: 5000000 ,
+        period:  12,
+        deposit: "Нет",
+        legal_scheme: "схема",
+        industry: "отрасль",
+        ext: "отказники мсб",
+    },];
 
     var host = "https://shvyrev.github.io/adminpanel/";
 
@@ -267,9 +355,11 @@
 
     $(function () {
 
-        $("#image-modal").modal("show");
-
         readField();
+
+        $("#unlogin-button").click(function () {
+            unlogin()
+        });
 
         $("#order-list").click(function () {
             changeLocation("order-list");
