@@ -424,7 +424,20 @@
         }
     }
 
+    var loadBanksInfo = function () {
+        $.get(
+            "http://localhost:8080/select/bank?attribute=name&attribute=uid",
+            function (data) {
+                console.log(data)
+            })
+            .fail(function (e) {
+                console.error(e);
+            })
+    };
+
     $(function () {
+
+        loadBanksInfo();
 
         var defaultPage = getParameterByName("type");
 
